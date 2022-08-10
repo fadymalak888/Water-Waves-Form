@@ -1,0 +1,66 @@
+<?php
+    
+    //check if user coming from A request
+            								
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+       echo $_POST['username'] . '<br>';
+       echo $_POST['email'] . '<br>';
+       echo $_POST['cellphone'] . '<br>';
+       echo $_POST['message'] . '<br>';
+}
+    
+?>
+
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Fady conact form</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/contact.css" />
+    </head>
+    <body>
+        
+        <!-- start from -->
+        <h1 class="text-center">contact me </h1 >
+        <div class="container">
+            <form class="contact-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+                <input 
+                       class="form-control" 
+                       type="text" 
+                       name="username" 
+                       placeholder="type your username"/>
+                 <i class="fa fa-user fa-fw"></i>
+                <input 
+                       class="form-control" 
+                       type="email" 
+                       name="email" 
+                       placeholder = "enter email"/>
+                <i class="fa fa-envelope fa-fw"></i>
+                <input 
+                       class="form-control" 
+                       type="text" name="cellphone" 
+                       placeholder="enter  cell phnoe" />
+                 <i class="fa fa-phone fa-fw"></i>
+                <textarea 
+                          class="form-control" 
+                          name = "message"
+                          placeholder="enter your message"></textarea>
+                <input 
+                       class="btn btn-success btn-block" 
+                       type="submit" 
+                       value="send message" />
+                 <i class="fa fa-send fa-fw send-icon"></i>
+            </form>
+        </div>
+        
+        <!-- end form -->
+    
+
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <script src="js/bootstrap.min.js"  ></script>
+    </body>
+</html>
+    
